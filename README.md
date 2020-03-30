@@ -34,7 +34,7 @@ Returns all characters.
 ==
 
 | Param             |     Value       |   Description                                                       |
-| ----------------- |: -------------: | ------------------------------------------------------------------: |
+| ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
 | name              | string          |                                                                     |
 | house             | string          | Valid strings: 'Gryffindor', 'Ravenclaw', 'Slytherin', 'Hufflepuff' |
@@ -59,7 +59,7 @@ Returns character with matching character id.
 <h3>URL Query Parameters</h3>
 ==
 | Param             |     Value       |   Description                                                       |
-| ----------------- |: -------------: | ------------------------------------------------------------------: |
+| ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
 
 <h1> House Routes </h1>
@@ -69,7 +69,7 @@ Returns all Hogwarts Houses.
 <h3>URL Query Parameters</h3>
 ==
 | Param             |     Value       |   Description                                                       |
-| ----------------- |: -------------: | ------------------------------------------------------------------: |
+| ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
 
 <pre><code>GET /houses/{houseId} </code></pre>
@@ -78,7 +78,7 @@ Returns house with matching House id. Includes list of characters affiliated wit
 <h3>URL Query Parameters</h3>
 ==
 | Param             |     Value       |   Description                                                       |
-| ----------------- |: -------------: | ------------------------------------------------------------------: |
+| ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
 
 <h1> Spell Routes </h1>
@@ -88,6 +88,6 @@ Returns all spells.
 <h3>URL Query Parameters</h3>
 ==
 | Param             |     Value       |   Description                                                       |
-| ----------------- |: -------------: | ------------------------------------------------------------------: |
+| ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
 
