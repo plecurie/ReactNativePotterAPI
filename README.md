@@ -58,6 +58,7 @@ Returns character with matching character id.
 
 <h3>URL Query Parameters</h3>
 ==
+
 | Param             |     Value       |   Description                                                       |
 | ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
@@ -68,6 +69,7 @@ Returns all Hogwarts Houses.
 
 <h3>URL Query Parameters</h3>
 ==
+
 | Param             |     Value       |   Description                                                       |
 | ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
@@ -77,6 +79,7 @@ Returns house with matching House id. Includes list of characters affiliated wit
 
 <h3>URL Query Parameters</h3>
 ==
+
 | Param             |     Value       |   Description                                                       |
 | ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
@@ -87,6 +90,7 @@ Returns all spells.
 
 <h3>URL Query Parameters</h3>
 ==
+
 | Param             |     Value       |   Description                                                       |
 | ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
