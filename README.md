@@ -63,6 +63,7 @@ Returns character with matching character id.
 | ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
 
+
 <h1> House Routes </h1>
 <pre><code>GET /houses </code></pre>
 Returns all Hogwarts Houses.
@@ -74,6 +75,7 @@ Returns all Hogwarts Houses.
 | ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
 
+
 <pre><code>GET /houses/{houseId} </code></pre>
 Returns house with matching House id. Includes list of characters affiliated with House.
 
@@ -83,6 +85,7 @@ Returns house with matching House id. Includes list of characters affiliated wit
 | Param             |     Value       |   Description                                                       |
 | ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
+
 
 <h1> Spell Routes </h1>
 <pre><code>GET /spells </code></pre>
@@ -94,4 +97,5 @@ Returns all spells.
 | Param             |     Value       |   Description                                                       |
 | ----------------- |:---------------:| -------------------------------------------------------------------:|
 | key               | your api key    | required                                                            |
+
 
