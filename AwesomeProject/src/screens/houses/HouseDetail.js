@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import {View, Image, Text, StyleSheet} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Image, StyleSheet, Text, View} from 'react-native';
 
 export default function HouseDetail(props) {
 
-    const { route, navigation } = props;
-    const { params } = route;
-    const [ customBackgroundColor, setBackgroundColor ] = useState();
-    const [ customTextColor, setTextColor ] = useState();
-    const [ url, setUrl ] = useState();
+    const {route, navigation} = props;
+    const {params} = route;
+    const [customBackgroundColor, setBackgroundColor] = useState();
+    const [customTextColor, setTextColor] = useState();
+    const [url, setUrl] = useState();
 
     useEffect(() => {
         navigation.setOptions({title: params.houseName});
@@ -36,26 +36,22 @@ export default function HouseDetail(props) {
     }, [navigation]);
 
     return (
-        <View style={{ backgroundColor: customBackgroundColor, height: '100%', justifyContent:'center', alignItems:'center' }}>
-            <Image source={url}
-                   style = {styles.image}
-            />
-            <Text style={{ color: customTextColor, fontSize: 40, fontWeight: 'bold' }}>{ params.houseName } </Text>
-            <Text style={{ color: customTextColor, fontSize: 20 }}>Mascot : { params.houseMascot } </Text>
-            <Text style={{ color: customTextColor, fontSize: 20 }}>Ghost : { params.houseGhost } </Text>
-            <Text style={{ color: customTextColor, fontSize: 20 }}>Founder : { params.houseFounder } </Text>
+        <View style={{
+            backgroundColor: customBackgroundColor,
+            height: '100%',
+            justifyContent: 'center',
+            alignItems: 'center'
+        }}>
+            <Image style={styles.image} source={url}/>
+            <Text style={{color: customTextColor, fontSize: 40, fontWeight: 'bold'}}>{params.houseName} </Text>
+            <Text style={{color: customTextColor, fontSize: 20}}>Mascot : {params.houseMascot} </Text>
+            <Text style={{color: customTextColor, fontSize: 20}}>Ghost : {params.houseGhost} </Text>
+            <Text style={{color: customTextColor, fontSize: 20}}>Founder : {params.houseFounder} </Text>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        margin: 10,
-        marginTop: 0,
-        backgroundColor: '#d6dbe1',
-        minHeight: '10%',
-        borderRadius: 5,
-    },
     image: {
         aspectRatio: 1,
         borderRadius: 5,

@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {GryffindorTileTheme, HufflepuffTileTheme, RavenclawTileTheme, SlytherinTileTheme} from "../themes/tiletheme";
 
 export default function HouseTile(props) {
     const {item, onPress} = props;
-    const { name, headOfHouse } = item;
-    const [ customTile, setTile ] = useState();
+    const {name, headOfHouse} = item;
+    const [customTile, setTile] = useState();
 
     useEffect(() => {
         switch (name) {
@@ -26,7 +26,7 @@ export default function HouseTile(props) {
 
     return (
         <TouchableOpacity onPress={() => onPress(item)}>
-            <View style={ customTile }>
+            <View style={customTile}>
                 <Text style={styles.name}>{name}</Text>
                 <Text style={styles.headOfHouse}>{headOfHouse}</Text>
             </View>
@@ -35,12 +35,6 @@ export default function HouseTile(props) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        margin: 10,
-        padding: 10,
-        borderRadius: 5,
-        backgroundColor: '#08B6CE',
-    },
     name: {
         fontSize: 24,
         fontWeight: 'bold',
@@ -48,5 +42,5 @@ const styles = StyleSheet.create({
     },
     headOfHouse: {
         fontSize: 14,
-    },
+    }
 });

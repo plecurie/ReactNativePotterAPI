@@ -1,6 +1,6 @@
-import React, { useCallback, useState, useEffect } from 'react';
-import{ Image, View, TouchableOpacity,  Text, StyleSheet } from 'react-native';
-import { GryffindorTheme, SlytherinTheme, RavenclawTheme, HufflepuffTheme } from '../themes/headerthemes';
+import React, {useCallback, useEffect, useState} from 'react';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {GryffindorTheme, HufflepuffTheme, RavenclawTheme, SlytherinTheme} from '../themes/headerthemes';
 import {
     GryffindorButtonTheme,
     HufflepuffButtonTheme,
@@ -10,15 +10,12 @@ import {
 
 export default function Home(props) {
 
-    const { navigation } = props;
-    const [ url, setUrl ] = useState();
-    const [ house, setHouse ] = useState();
-    const [ customButton, setButton ] = useState();
+    const {navigation} = props;
+    const [url, setUrl] = useState();
+    const [house, setHouse] = useState();
+    const [customButton, setButton] = useState();
 
     useEffect(() => {
-        navigation.setOptions({
-            title: "Harry Potter API",
-        });
         updateHouse();
     }, []);
 
@@ -48,7 +45,7 @@ export default function Home(props) {
         }
     }, [house]);
 
-    const updateHouse = useCallback(()=> {
+    const updateHouse = useCallback(() => {
         fetch('https://www.potterapi.com/v1/sortingHat')
             .then((response) => {
                 return response.text()
@@ -60,36 +57,36 @@ export default function Home(props) {
     }, []);
 
     const onCharactersTouch = useCallback(() => {
-        navigation.navigate('CharactersList', { url: 'https://www.potterapi.com/v1/characters?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi', button: customButton });
+        navigation.navigate('CharactersList', {url: 'https://www.potterapi.com/v1/characters?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi'});
     }, [navigation]);
 
     const onHousesTouch = useCallback(() => {
-        navigation.navigate('HousesList', { url: 'https://www.potterapi.com/v1/houses?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi', button: customButton });
+        navigation.navigate('HousesList', {url: 'https://www.potterapi.com/v1/houses?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi'});
     }, [navigation]);
 
     const onSpells = useCallback(() => {
-        navigation.navigate('SpellsList', { url: 'https://www.potterapi.com/v1/spells?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi', button: customButton });
+        navigation.navigate('SpellsList', {url: 'https://www.potterapi.com/v1/spells?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi'});
     }, [navigation]);
 
-    return(
-            <View style={styles.container}>
-                <Image source = {url}
-                       style = {styles.image}
-                />
-                <Text style={styles.welcome}> { house } </Text>
-                <TouchableOpacity onPress={updateHouse}>
-                    <Text style={ customButton }>Change House</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={onCharactersTouch}>
-                    <Text style={ customButton }>Characters</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={onHousesTouch}>
-                    <Text style={ customButton }>Houses</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={onSpells}>
-                    <Text style={ customButton }>Spells</Text>
-                </TouchableOpacity>
-            </View>
+    return (
+        <View style={styles.container}>
+            <Image source={url}
+                   style={styles.image}
+            />
+            <Text style={styles.welcome}> {house} </Text>
+            <TouchableOpacity onPress={updateHouse}>
+                <Text style={customButton}>Change House</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={onCharactersTouch}>
+                <Text style={customButton}>Characters</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={onHousesTouch}>
+                <Text style={customButton}>Houses</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={onSpells}>
+                <Text style={customButton}>Spells</Text>
+            </TouchableOpacity>
+        </View>
     );
 }
 
@@ -114,22 +111,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         width: 200,
         height: 200
-    },
-    button: {
-        backgroundColor: '#a52a2a',
-        margin:2,
-        borderColor: 'transparent',
-        borderWidth: 1,
-        borderRadius: 12,
-        color: '#ffd700',
-        fontSize: 24,
-        fontWeight: 'bold',
-        overflow: 'hidden',
-        padding: 12,
-        textAlign:'center',
-        borderStyle: "solid",
     }
-
 });
 
 

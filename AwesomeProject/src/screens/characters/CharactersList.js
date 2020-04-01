@@ -1,14 +1,16 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {View, FlatList, StyleSheet} from 'react-native';
+import React, {useCallback, useEffect, useState} from 'react';
+import {FlatList, StyleSheet, View} from 'react-native';
 import CharacterTile from "../../components/CharacterTile";
+import {GryffindorTheme, HufflepuffTheme, RavenclawTheme, SlytherinTheme} from "../../themes/headerthemes";
 
 export default function CharactersList(props) {
-    const { route, navigation } = props;
-    const { url } = route.params;
-    const [ data, setData ] = useState([]);
+    const {route, navigation} = props;
+    const {url, house} = route.params;
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         navigation.setOptions({title: 'List of Characters'});
+
         async function getItems() {
             try {
                 const response = await fetch(url, {
@@ -18,7 +20,8 @@ export default function CharactersList(props) {
                     }
                 });
                 const body = await response.json();
-                setData(body)
+                setData(body);
+                console.log(house)
             } catch (err) {
                 console.error(err)
             }
@@ -27,6 +30,24 @@ export default function CharactersList(props) {
         getItems();
 
     }, []);
+
+    useEffect(() => {
+
+        switch (house) {
+            case '"Gryffindor"':
+                navigation.setOptions(GryffindorTheme);
+                return;
+            case '"Slytherin"':
+                navigation.setOptions(SlytherinTheme);
+                return;
+            case '"Ravenclaw"':
+                navigation.setOptions(RavenclawTheme);
+                return;
+            case '"Hufflepuff"':
+                navigation.setOptions(HufflepuffTheme);
+                return;
+        }
+    }, [house]);
 
     const onPress = useCallback(
         selectedItem => {
@@ -43,7 +64,8 @@ export default function CharactersList(props) {
                 characterIsDumbledoresArmy: selectedItem.dumbledoresArmy,
                 characterIsDeathEater: selectedItem.deathEater,
                 characterBloodStatus: selectedItem.bloodStatus,
-                characterspecies: selectedItem.species
+                characterspecies: selectedItem.species,
+                house: house
             });
         }, [navigation]);
 
@@ -51,7 +73,7 @@ export default function CharactersList(props) {
         <View style={styles.container}>
             <FlatList
                 data={data}
-                renderItem={values => <CharacterTile item={values.item} onPress={onPress} />}
+                renderItem={values => <CharacterTile item={values.item} onPress={onPress}/>}
                 keyExtractor={item => item.id}
             />
         </View>
@@ -65,12 +87,11 @@ const styles = StyleSheet.create({
         borderColor: 'transparent',
         borderWidth: 1,
         borderRadius: 12,
-        color: '#ffd700',
         fontSize: 24,
         fontWeight: 'bold',
         overflow: 'hidden',
         padding: 12,
-        textAlign:'center',
+        textAlign: 'center',
         borderStyle: "solid",
     },
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 export default function SpellTile(props) {
     const {item, onPress} = props;
@@ -8,8 +8,8 @@ export default function SpellTile(props) {
     return (
         <TouchableOpacity onPress={() => onPress(item)}>
             <View style={styles.container}>
-                <Text style={styles.spell}>{ spell }</Text>
-                <Text style={styles.type}>{ type }</Text>
+                <Text style={styles.spell}>{spell}</Text>
+                <Text style={styles.type}>{type}</Text>
             </View>
         </TouchableOpacity>
     );
@@ -21,8 +21,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 5,
         backgroundColor: '#e6e6fa',
-        justifyContent:'center',
-        alignItems:'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     spell: {
         fontSize: 24,

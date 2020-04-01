@@ -1,6 +1,6 @@
 export const GryffindorButtonTheme = {
     backgroundColor: '#b22222',
-    margin:2,
+    margin: 2,
     borderColor: 'transparent',
     borderWidth: 1,
     borderRadius: 12,
@@ -9,13 +9,13 @@ export const GryffindorButtonTheme = {
     fontWeight: 'bold',
     overflow: 'hidden',
     padding: 12,
-    textAlign:'center',
+    textAlign: 'center',
     borderStyle: "solid",
 };
 
 export const SlytherinButtonTheme = {
     backgroundColor: '#006400',
-    margin:2,
+    margin: 2,
     borderColor: 'transparent',
     borderWidth: 1,
     borderRadius: 12,
@@ -24,13 +24,13 @@ export const SlytherinButtonTheme = {
     fontWeight: 'bold',
     overflow: 'hidden',
     padding: 12,
-    textAlign:'center',
+    textAlign: 'center',
     borderStyle: "solid",
 };
 
 export const HufflepuffButtonTheme = {
     backgroundColor: '#daa520',
-    margin:2,
+    margin: 2,
     borderColor: 'transparent',
     borderWidth: 1,
     borderRadius: 12,
@@ -39,13 +39,13 @@ export const HufflepuffButtonTheme = {
     fontWeight: 'bold',
     overflow: 'hidden',
     padding: 12,
-    textAlign:'center',
+    textAlign: 'center',
     borderStyle: "solid",
 };
 
 export const RavenclawButtonTheme = {
     backgroundColor: '#483d8b',
-    margin:2,
+    margin: 2,
     borderColor: 'transparent',
     borderWidth: 1,
     borderRadius: 12,
@@ -54,6 +54,6 @@ export const RavenclawButtonTheme = {
     fontWeight: 'bold',
     overflow: 'hidden',
     padding: 12,
-    textAlign:'center',
+    textAlign: 'center',
     borderStyle: "solid",
 };

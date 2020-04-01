@@ -1,14 +1,16 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {View, FlatList, StyleSheet} from 'react-native';
+import React, {useCallback, useEffect, useState} from 'react';
+import {FlatList, StyleSheet, View} from 'react-native';
 import SpellTile from "../../components/SpellTile";
+import {GryffindorTheme, HufflepuffTheme, RavenclawTheme, SlytherinTheme} from "../../themes/headerthemes";
 
 export default function SpellsList(props) {
-    const { route, navigation } = props;
-    const { url } = route.params;
-    const [ data, setData ] = useState([]);
+    const {route, navigation} = props;
+    const {url, house} = route.params;
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         navigation.setOptions({title: 'Spells of Magic'}, route.params.theme);
+
         async function getItems() {
             try {
                 const response = await fetch(url, {
@@ -28,13 +30,32 @@ export default function SpellsList(props) {
 
     }, []);
 
+    useEffect(() => {
+
+        switch (house) {
+            case '"Gryffindor"':
+                navigation.setOptions(GryffindorTheme);
+                return;
+            case '"Slytherin"':
+                navigation.setOptions(SlytherinTheme);
+                return;
+            case '"Ravenclaw"':
+                navigation.setOptions(RavenclawTheme);
+                return;
+            case '"Hufflepuff"':
+                navigation.setOptions(HufflepuffTheme);
+                return;
+        }
+    }, [house]);
+
     const onPress = useCallback(
         selectedItem => {
             navigation.navigate('SpellDetail', {
                 spellId: selectedItem.id,
                 spellName: selectedItem.spell,
                 spellType: selectedItem.type,
-                spellEffect: selectedItem.effect
+                spellEffect: selectedItem.effect,
+                house: house
             });
         }, [navigation]);
 
@@ -42,7 +63,7 @@ export default function SpellsList(props) {
         <View style={styles.container}>
             <FlatList
                 data={data}
-                renderItem={values => <SpellTile item={values.item} onPress={onPress} />}
+                renderItem={values => <SpellTile item={values.item} onPress={onPress}/>}
                 keyExtractor={item => item.id}
             />
         </View>
@@ -56,12 +77,11 @@ const styles = StyleSheet.create({
         borderColor: 'transparent',
         borderWidth: 1,
         borderRadius: 12,
-        color: '#ffd700',
         fontSize: 24,
         fontWeight: 'bold',
         overflow: 'hidden',
         padding: 12,
-        textAlign:'center',
+        textAlign: 'center',
         borderStyle: "solid",
     },
 });

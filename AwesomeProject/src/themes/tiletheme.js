@@ -4,8 +4,8 @@ export const SlytherinTileTheme = {
     borderRadius: 5,
     backgroundColor: '#006400',
     color: '#c0c0c0',
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center'
 };
 
 export const HufflepuffTileTheme = {
@@ -14,8 +14,8 @@ export const HufflepuffTileTheme = {
     borderRadius: 5,
     backgroundColor: '#daa520',
     color: '#696969',
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center'
 };
 
 export const RavenclawTileTheme = {
@@ -24,8 +24,8 @@ export const RavenclawTileTheme = {
     borderRadius: 5,
     backgroundColor: '#483d8b',
     color: '#ffff00',
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center'
 };
 
 export const GryffindorTileTheme = {
@@ -34,6 +34,6 @@ export const GryffindorTileTheme = {
     borderRadius: 5,
     backgroundColor: '#b22222',
     color: '#ffd700',
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center'
 };
