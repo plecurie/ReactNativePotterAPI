@@ -10,7 +10,6 @@ export default function HousesList(props) {
 
     useEffect(() => {
         navigation.setOptions({title: 'Houses of Hogwarts'}, route.params.theme);
-
         async function getItems() {
             try {
                 const response = await fetch(url, {

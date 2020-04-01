@@ -11,10 +11,10 @@ export default function SpellDetail(props) {
     }, [navigation]);
 
     return (
-        <View container={styles.container}>
-            <Text>{ params.spellName } </Text>
-            <Text>{ params.spellType } </Text>
-            <Text>{ params.spellEffect } </Text>
+        <View style={{ backgroundColor: "#e6e6fa", height: '100%', justifyContent:'center', alignItems:'center' }}>
+            <Text style={{ fontSize: 40, fontWeight: 'bold' }}>{ params.spellName } </Text>
+            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{ params.spellType } </Text>
+            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{ params.spellEffect } </Text>
         </View>
     );
 }
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     container: {
         margin: 10,
         marginTop: 0,
-        backgroundColor: '#d6dbe1',
+        backgroundColor: '#e6e6fa',
         minHeight: '10%',
         borderRadius: 5,
     }

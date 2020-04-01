@@ -18,7 +18,7 @@ export default function App() {
         <Stack.Navigator
             initialRouteName="Home"
             screenOptions= {{
-                title: 'Global Title Navigation'
+                title: 'Global Title Navigation',
             }}>
             <Stack.Screen
                 name="Home"

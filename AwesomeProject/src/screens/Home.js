@@ -8,7 +8,6 @@ import {
     SlytherinButtonTheme
 } from "../themes/buttonthemes";
 
-
 export default function Home(props) {
 
     const { navigation } = props;
@@ -24,6 +23,7 @@ export default function Home(props) {
     }, []);
 
     useEffect(() => {
+
         switch (house) {
             case '"Gryffindor"':
                 navigation.setOptions(GryffindorTheme);
@@ -46,7 +46,7 @@ export default function Home(props) {
                 setUrl(require("../images/blason-poufsouffle.jpg"));
                 return;
         }
-    }, [house, url]);
+    }, [house]);
 
     const updateHouse = useCallback(()=> {
         fetch('https://www.potterapi.com/v1/sortingHat')
@@ -60,15 +60,15 @@ export default function Home(props) {
     }, []);
 
     const onCharactersTouch = useCallback(() => {
-        navigation.navigate('CharactersList', { url: 'https://www.potterapi.com/v1/characters?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi', house: house });
+        navigation.navigate('CharactersList', { url: 'https://www.potterapi.com/v1/characters?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi', button: customButton });
     }, [navigation]);
 
     const onHousesTouch = useCallback(() => {
-        navigation.navigate('HousesList', { url: 'https://www.potterapi.com/v1/houses?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi', house: house });
+        navigation.navigate('HousesList', { url: 'https://www.potterapi.com/v1/houses?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi', button: customButton });
     }, [navigation]);
 
     const onSpells = useCallback(() => {
-        navigation.navigate('SpellsList', { url: 'https://www.potterapi.com/v1/spells?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi', house: house });
+        navigation.navigate('SpellsList', { url: 'https://www.potterapi.com/v1/spells?key=$2a$10$Icjn5f4SD27YEQMMMYdDWewEDjA2mScJ9T2uGaPzckVX785evcaZi', button: customButton });
     }, [navigation]);
 
     return(

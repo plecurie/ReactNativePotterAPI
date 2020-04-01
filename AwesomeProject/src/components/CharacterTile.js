@@ -2,14 +2,14 @@ import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
 export default function CharacterTile(props) {
-    const {item, onPress} = props;
-    const {name, description} = item;
+    const { item, onPress } = props;
+    const { name, role } = item;
 
     return (
         <TouchableOpacity onPress={() => onPress(item)}>
-            <View style={styles.container}>
+            <View style={ styles.container }>
                 <Text style={styles.name}>{name}</Text>
-                <Text style={styles.description}>{description}</Text>
+                <Text style={styles.role}>{role}</Text>
             </View>
         </TouchableOpacity>
     );
@@ -20,14 +20,16 @@ const styles = StyleSheet.create({
         margin: 5,
         padding: 10,
         borderRadius: 5,
-        backgroundColor: '#cd853f',
+        backgroundColor: '#f0e68c',
+        justifyContent:'center',
+        alignItems:'center'
     },
     name: {
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 5,
     },
-    description: {
+    role: {
         fontSize: 14,
     },
 });

@@ -8,6 +8,7 @@ export default function CharactersList(props) {
     const [ data, setData ] = useState([]);
 
     useEffect(() => {
+        navigation.setOptions({title: 'List of Characters'});
         async function getItems() {
             try {
                 const response = await fetch(url, {
