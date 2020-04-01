@@ -60,5 +60,16 @@ export default function CharactersList(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        margin: 20,
+        borderColor: 'transparent',
+        borderWidth: 1,
+        borderRadius: 12,
+        color: '#ffd700',
+        fontSize: 24,
+        fontWeight: 'bold',
+        overflow: 'hidden',
+        padding: 12,
+        textAlign:'center',
+        borderStyle: "solid",
     },
 });

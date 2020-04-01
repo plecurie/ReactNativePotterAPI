@@ -17,10 +17,10 @@ export default function CharacterTile(props) {
 
 const styles = StyleSheet.create({
     container: {
-        margin: 10,
+        margin: 5,
         padding: 10,
         borderRadius: 5,
-        backgroundColor: '#08B6CE',
+        backgroundColor: '#cd853f',
     },
     name: {
         fontSize: 24,
