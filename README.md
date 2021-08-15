@@ -1,7 +1,7 @@
 # ReactNative 
 Crossplatform application fetching PotterAPI.
 
-- Use of hooks to handle states and effects (applicatioin color theme)
+- Use of hooks to handle states and effects (application color theme)
 - React Navigation to navigate within different views.
 - Data parsing.
 
