@@ -1,4 +1,4 @@
-# ReactNativePotterAPI
+# ReactNative crossplatform application fetching PotterAPI
 *********************
 
 
